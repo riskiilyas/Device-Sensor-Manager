@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DeviceSensorManager">
         <activity
+            android:name=".GpsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GyroscopeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccelerometerActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
