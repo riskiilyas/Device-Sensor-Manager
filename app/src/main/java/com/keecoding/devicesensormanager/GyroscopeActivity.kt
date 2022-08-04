@@ -10,16 +10,14 @@ import android.os.Bundle
 
 class GyroscopeActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var sensorManager: SensorManager
-    private lateinit var accelerometerSensor: Sensor
+    private lateinit var gyroscopeSensor: Sensor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accelerometer)
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
-
-        sensorManager.registerListener(this, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL)
+        gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
@@ -31,4 +29,14 @@ class GyroscopeActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
+
+    override fun onResume() {
+        sensorManager.registerListener(this, gyroscopeSensor, SensorManager.SENSOR_DELAY_NORMAL)
+        super.onResume()
+    }
+
+    override fun onPause() {
+        sensorManager.unregisterListener(this)
+        super.onPause()
+    }
 }
