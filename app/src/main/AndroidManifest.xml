@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.keecoding.devicesensormanager">
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,15 +11,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DeviceSensorManager">
         <activity
+            android:screenOrientation="portrait"
+            android:name=".ProximityActivity"
+            android:exported="false" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".MagneticFieldActivity"
+            android:exported="false" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".AmbientTemperatureActivity"
+            android:exported="false" />
+        <activity
+            android:screenOrientation="portrait"
             android:name=".GpsActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".GyroscopeActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".AccelerometerActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
