@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android_Projects/Android_Exercise/DeviceSensorManager/app/src/main/res/layout/activity_accelerometer.xml" value="0.25104166666666666" />
+        <entry key="..\:/Android_Projects/Android_Exercise/DeviceSensorManager/app/src/main/res/layout/activity_gyroscope.xml" value="0.25104166666666666" />
         <entry key="..\:/Android_Projects/Android_Exercise/DeviceSensorManager/app/src/main/res/layout/activity_main.xml" value="0.25263157894736843" />
       </map>
     </option>

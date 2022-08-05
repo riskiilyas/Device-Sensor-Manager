@@ -7,14 +7,17 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.keecoding.devicesensormanager.databinding.ActivityGyroscopeBinding
 
 class GyroscopeActivity : AppCompatActivity(), SensorEventListener {
+    private lateinit var binding: ActivityGyroscopeBinding
     private lateinit var sensorManager: SensorManager
     private lateinit var gyroscopeSensor: Sensor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_accelerometer)
+        binding = ActivityGyroscopeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
